@@ -18,20 +18,22 @@ struct TwitterManager {
     // Refers to the class that implements TwitterManagerDelegate
     var delegate: TwitterManagerDelegate?
     
+    // Generate URL and perform request for Elon Musk tweets
     func fetchElonTweets() {
         let urlString = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=elonmusk&count=3200"
         performRequest(with: urlString)
     }
     
+    // Generate URL and perform request for Kanye West tweets
     func fetchKanyeTweets() {
         let urlString = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=kanyewest&count=3200"
         performRequest(with: urlString)
     }
     
+    // Make the HTTP request
     func performRequest(with urlString: String) {
         if let url = URL(string: urlString) {
             
-            // Make the HTTP request
             var request = URLRequest(url: url)
             request.addValue("Bearer AAAAAAAAAAAAAAAAAAAAAKxtHwEAAAAAIg7HqlORKXcEAWzYm%2FZQPKNXoJc%3DCEglCmJ4oGTsAnMYqXp9ISjqwCvX91tbi6xEyA00r1DNzr64OI", forHTTPHeaderField: "Authorization")
             request.addValue("personalization_id=\"v1_FRsbCBjuWSsMl4AyHTI0Jw==\"; guest_id=v1%3A160091815732370591", forHTTPHeaderField: "Cookie")
@@ -61,11 +63,12 @@ struct TwitterManager {
     func parseJSON(_ twitterData: Data) -> [TwitterModel]? {
         let decoder = JSONDecoder()
         do {
+            // decodedData is a collection of TwitterData
             let decodedData = try decoder.decode([TwitterData].self, from: twitterData)
             
             var tweets = [TwitterModel]()
             
-            // Fill the tweets array with data by converting to TwitterModel
+            // Fill the tweets array with data by converting decodedData to TwitterModel
             for element in decodedData {
                 let text = element.text
                 if (!text.contains("@") && (!text.contains("http"))) {  // Filter out links and tags

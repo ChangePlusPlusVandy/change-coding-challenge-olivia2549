@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Use this model to decode the JSON file
 struct TwitterData: Codable {
     let text: String
     let user: User

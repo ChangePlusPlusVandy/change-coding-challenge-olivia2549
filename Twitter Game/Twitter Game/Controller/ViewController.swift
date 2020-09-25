@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         restart()
     }
     
+    // Set all values and labels to the beginning
     func restart() {
         gameManager.reset()
         twitterManager.fetchElonTweets()
@@ -44,7 +45,8 @@ class ViewController: UIViewController {
         gameOver = false
     }
     
-    func endGame() {
+    // Set labels to display results
+    func displayResults() {
         progressView.isHidden = true
         correctAnswerLabel.isHidden = true
         tweetTextLabel.text = "Your score: \(gameManager.score)/10"
@@ -73,7 +75,7 @@ class ViewController: UIViewController {
         } else if gameOver {
             restart()
         } else {
-            endGame()
+            displayResults()
             gameOver = true
         }
     }
@@ -81,6 +83,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: TwitterManagerDelegate, GameManagerDelegate {
+    // Gets called when GameManager generates a tweet
     func didGenerateTweet(tweetToGuess: String) {
         DispatchQueue.main.async {
             if (tweetToGuess != "no tweet found") {
@@ -89,6 +92,7 @@ extension ViewController: TwitterManagerDelegate, GameManagerDelegate {
         }
     }
     
+    // Gets called when TwitterManager fetches tweet data via http request
     func didFetchTweets(_ twitterManager: TwitterManager, fetchedTweets: [TwitterModel]) {
         DispatchQueue.main.async {
             self.gameManager.tweets.append(contentsOf: fetchedTweets)
