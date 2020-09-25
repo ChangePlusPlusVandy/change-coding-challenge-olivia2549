@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Twitter_Game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottomRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Background-Bubbles" translatesAutoresizingMaskIntoConstraints="NO" id="rIJ-6J-z19">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="mGx-De-4fn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who tweeted this?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9I-p7-sF9">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="39.5"/>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="30"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE TWEET" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gy1-CB-RM6">
+                                        <rect key="frame" x="0.0" y="155" width="414" height="26.5"/>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JRv-kX-oeB">
+                                        <rect key="frame" x="0.0" y="296.5" width="414" height="262.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4I-xI-xnf">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="262.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="262.5" id="AI6-Ot-2Df"/>
+                                                    <constraint firstAttribute="width" constant="207" id="Aew-36-cUu"/>
+                                                </constraints>
+                                                <state key="normal" title="Kanye West" image="kanye-west-image"/>
+                                                <connections>
+                                                    <action selector="answerBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cct-lL-5u4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pf-u6-cVS">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="262.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="262.5" id="GlA-Pu-7DH"/>
+                                                    <constraint firstAttribute="width" constant="207" id="bvB-uT-a5j"/>
+                                                </constraints>
+                                                <state key="normal" title="Elon Musk" image="elon-musk-image"/>
+                                                <connections>
+                                                    <action selector="answerBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="42s-Fb-1ZD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ujq-wd-pwe">
+                                        <rect key="frame" x="0.0" y="674.5" width="414" height="2"/>
+                                        <color key="progressTintColor" red="1" green="0.44255239769999999" blue="0.51404307010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4db-Oe-tyh">
+                                        <rect key="frame" x="0.0" y="791.5" width="414" height="26.5"/>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rIJ-6J-z19" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9nx-1B-xuh"/>
+                            <constraint firstItem="rIJ-6J-z19" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CVh-Am-Ji3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mGx-De-4fn" secondAttribute="bottom" id="JFs-nz-aW3"/>
+                            <constraint firstAttribute="trailing" secondItem="rIJ-6J-z19" secondAttribute="trailing" id="NRM-nw-eZO"/>
+                            <constraint firstAttribute="bottom" secondItem="rIJ-6J-z19" secondAttribute="bottom" id="PWN-IU-Xky"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mGx-De-4fn" secondAttribute="trailing" id="iSe-Zi-f5m"/>
+                            <constraint firstItem="mGx-De-4fn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="muw-kP-cDK"/>
+                            <constraint firstItem="mGx-De-4fn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="t6j-zt-eXI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="correctAnswerLabel" destination="4db-Oe-tyh" id="p5w-O5-DNI"/>
+                        <outlet property="progressView" destination="Ujq-wd-pwe" id="o7u-uh-kdt"/>
+                        <outlet property="titleLabel" destination="L9I-p7-sF9" id="KOH-SL-Orq"/>
+                        <outlet property="tweetTextLabel" destination="Gy1-CB-RM6" id="eYf-yS-Xem"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background-Bubbles" width="352" height="102"/>
+        <image name="elon-musk-image" width="512" height="512"/>
+        <image name="kanye-west-image" width="250" height="256"/>
+    </resources>
+</document>
